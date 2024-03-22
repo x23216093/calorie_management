@@ -1,0 +1,40 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/form_styles.css' %}">
+</head>
+<form action="" method="POST" class="fooditem-form">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="id_name">Name:</label>
+        {{ form.name }}
+    </div>
+    <div class="form-group">
+        <label for="id_category2">Category:</label>
+        {{ form.category }}
+    </div>
+    <div class="form-group">
+        <label for="id_description">Calorie:</label>
+        {{ form.calorie }}
+    </div>
+    <div class="form-group">
+        <label for="id_price">Protein:</label>
+        {{ form.protein }}
+    </div>
+    <div class="form-group">
+        <label for="id_category">Carbohydrate:</label>
+        {{ form.carbohydrate }}
+    </div>
+    <div class="form-group">
+        <label for="id_image">Fats:</label>
+        {{ form.fats }}
+    </div>
+    <div class="form-group">
+        <label for="id_image1">Quantity:</label>
+        {{ form.quantity }}
+    </div>
+
+    <input type="submit" class="btn btn-success" value="Submit">
+</form>
+{% endblock %}

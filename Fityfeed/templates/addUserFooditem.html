@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/form_styles.css' %}">
+</head>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <form action="" method="POST" class="fooditem-form">
+                {% csrf_token %}
+                 <div class="form-group">
+                     <label for="id_name">Name:</label>
+                     <input type="hidden" id="id_customer" name="customer" value="{{ form.initial.customer.id }}">
+                     <input type="text" id="id_customer2" name="customer2" class="form-control" value="{{ form.initial.customer.name }}" readonly>
+                </div>
+                <div class="form-group">
+                     <label for="id_category2">Food item:</label>
+                        {{ form.fooditem }}
+                </div>
+                <div class="form-group">
+                     <label for="id_description">Category:</label>
+                        {{ form.category }}
+                </div>
+                <input type="submit" class="btn btn-success" value="Submit">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
